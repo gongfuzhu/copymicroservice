@@ -24,9 +24,9 @@
 
     <modules>
 
-        <!-- 核心 -->
-        <module>ApplicationCenter/GateWayCenter</module>
-        <module>ApplicationCenter/ConfigServer</module>
+        <!-- 平台 -->
+        <module>ApplicationCenter/Gateway</module>
+        <module>ApplicationCenter/Config</module>
 
 
 

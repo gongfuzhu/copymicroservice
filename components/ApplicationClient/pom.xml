@@ -63,6 +63,28 @@
             <version>${spring-cloud.version}</version>
         </dependency>
 
+        <!--  discovery -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+            <version>${spring-cloud.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-core</artifactId>
+            <version>${spring-integration-core.version}</version>
+        </dependency>
+
+
+        <!-- 负载 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <version>${spring-cloud.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
@@ -75,19 +97,6 @@
             </exclusions>
         </dependency>
 
-
-        <!-- eureka-client -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>${spring-cloud.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-boot-autoconfigure</artifactId>
-                    <groupId>org.springframework.boot</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <!--hystrix-->
         <dependency>
@@ -172,6 +181,10 @@
                 <exclusion>
                     <artifactId>spring-boot-starter-aop</artifactId>
                     <groupId>org.springframework.boot</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-cloud-sleuth-core</artifactId>
+                    <groupId>org.springframework.cloud</groupId>
                 </exclusion>
             </exclusions>
         </dependency>

@@ -1,6 +1,5 @@
 package com.fast.dev.data.mongo.data;
 
-import com.fast.dev.core.util.script.GroovyUtil;
 import com.fast.dev.data.base.data.DataHelper;
 import com.fast.dev.data.base.data.annotations.DataRule;
 import com.fast.dev.data.base.data.impl.DataHelperImpl;
@@ -8,6 +7,7 @@ import com.fast.dev.data.base.data.model.UpdateDataDetails;
 import com.fast.dev.data.base.data.type.UpdateType;
 import com.fast.dev.data.mongo.helper.DBHelper;
 import com.fast.dev.data.mongo.util.EntityObjectUtil;
+import com.github.microservice.core.util.script.GroovyUtil;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.AbstractPersistable;

@@ -1,8 +1,8 @@
 package com.fast.dev.data.mongo.util;
 
 
-import com.fast.dev.core.util.bean.BeanUtil;
 import com.fast.dev.data.mongo.domain.SuperEntity;
+import com.github.microservice.core.util.bean.BeanUtil;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Update;
 

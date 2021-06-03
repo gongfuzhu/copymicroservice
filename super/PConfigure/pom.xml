@@ -35,6 +35,7 @@
 
         <spring-data-jpa.version>2.5.0</spring-data-jpa.version>
 
+        <spring-integration-core.version>5.5.0</spring-integration-core.version>
 
         <!-- 依赖组件 -->
         <ribbon.version>2.2.8.RELEASE</ribbon.version>
@@ -131,11 +132,15 @@
         <profile>
             <id>dev</id>
 
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
             <properties>
                 <spring.profiles.active>dev</spring.profiles.active>
 
                 <ApplicationCenter.url>192.168.63.130</ApplicationCenter.url>
-                <ConfigCenter.url>http://192.168.63.130:${ConfigCenter.port}</ConfigCenter.url>
+                <ConfigCenter.url>http://192.168.31.222:${ConfigCenter.port}</ConfigCenter.url>
                 <Kafka.brokers>192.168.63.130:9092</Kafka.brokers>
                 <Zipkin.baseUrl>http://192.168.63.130:9411</Zipkin.baseUrl>
                 <Zipkin.sampler.probability>0.1</Zipkin.sampler.probability>

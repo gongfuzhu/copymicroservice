@@ -21,8 +21,7 @@ public class FeignDemoApplication extends ApplicationBootSuper {
 
 
     public static void main(String[] args) {
-        ApplicationContext ac = SpringApplication.run(FeignDemoApplication.class, args);
-
+        SpringApplication.run(FeignDemoApplication.class, args);
 
     }
 

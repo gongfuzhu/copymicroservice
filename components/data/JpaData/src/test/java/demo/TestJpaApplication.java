@@ -1,10 +1,8 @@
 package demo;
 
-import com.fast.dev.core.boot.ApplicationBootSuper;
-import demo.simple.config.JdbcDataConfiguration;
+import com.github.microservice.core.boot.ApplicationBootSuper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
 
 @ComponentScan("demo.simple")
 public class TestJpaApplication extends ApplicationBootSuper {

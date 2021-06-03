@@ -1,6 +1,6 @@
 package com.fast.dev.data.timer.conf;
 
-import com.fast.dev.core.util.os.SystemUtil;
+import com.github.microservice.core.util.os.SystemUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

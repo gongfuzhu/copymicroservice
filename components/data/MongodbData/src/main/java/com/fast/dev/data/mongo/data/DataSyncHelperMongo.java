@@ -1,13 +1,13 @@
 package com.fast.dev.data.mongo.data;
 
-import com.fast.dev.core.util.bean.BeanUtil;
-import com.fast.dev.core.util.script.GroovyUtil;
 import com.fast.dev.data.base.data.DataCleanCondition;
 import com.fast.dev.data.base.data.DataSyncHelper;
 import com.fast.dev.data.base.data.annotations.sync.DataSync;
 import com.fast.dev.data.base.data.annotations.sync.DataSyncs;
 import com.fast.dev.data.base.data.model.UpdateSyncDetails;
 import com.fast.dev.data.mongo.helper.DBHelper;
+import com.github.microservice.core.util.bean.BeanUtil;
+import com.github.microservice.core.util.script.GroovyUtil;
 import com.mongodb.bulk.BulkWriteResult;
 import lombok.Getter;
 import lombok.SneakyThrows;

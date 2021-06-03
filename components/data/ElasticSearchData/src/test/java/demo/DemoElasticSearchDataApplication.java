@@ -1,27 +1,14 @@
 package demo;
 
-import com.fast.dev.core.boot.ApplicationBootSuper;
-import com.fast.dev.core.mvc.MVCConfiguration;
+import com.github.microservice.core.boot.ApplicationBootSuper;
 import demo.simple.dao.SearchTableDao;
 import demo.simple.domain.SearchTable;
-import org.elasticsearch.action.*;
-import org.elasticsearch.client.Client;
-import org.elasticsearch.client.ElasticsearchClient;
-import org.elasticsearch.client.node.NodeClient;
-import org.elasticsearch.client.transport.TransportClient;
-import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.TransportAddress;
-import org.elasticsearch.threadpool.ThreadPool;
-import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
-import org.springframework.data.elasticsearch.core.query.*;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import org.springframework.data.elasticsearch.core.query.Criteria;
+import org.springframework.data.elasticsearch.core.query.CriteriaQuery;
 
 
 @ComponentScan("demo.simple")

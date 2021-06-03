@@ -1,6 +1,6 @@
-#默认端口号
+#Web服务器端口
 server:
-  port: 8080
+  port: ${ConfigCenter.port}
 
 #允许消息总线
 spring:
@@ -8,17 +8,15 @@ spring:
     name: ${project.artifactId}
   cloud:
     consul:
-      config:
-        enabled: false
       discovery:
-        health-check-path: /actuator/health  # 检测实例健康
-        health-check-interval: 10s   # 每隔10s检查
         hostname: localhost    # 配置实例地址
         port: ${server.port}
+        health-check-path: /actuator/health  # 检测实例健康
+        health-check-interval: 10s   # 每隔10s检查
         register: true  # 自动注册
         service-name: ${spring.application.name} # 实例名称
         instance-id: ${spring.application.name}:${server.port}
-      host: 127.0.0.1
+      host: ${ApplicationCenter.url}
       port: ${ApplicationCenter.port}
     #kafka
     stream:
@@ -44,29 +42,11 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
-        exclude: "env,beans"
-
-
-
-
-#开启断路器
-#feign.hystrix.enabled=true
-
-
+        include: bus-refresh
 
 
 #调试或者输出日志
 logging:
-  file: 
+  file:
     name: logs/${project.artifactId}.log
-#  level:
-#    org:
-#      springframework:
-#        cloud:
-#          sleuth: DEBUG
-#        web:
-#          servlet:
-#            DispatcherServlet: DEBUG
-
 #debug: true

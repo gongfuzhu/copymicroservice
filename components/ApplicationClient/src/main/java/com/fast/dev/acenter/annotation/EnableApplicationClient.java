@@ -1,6 +1,6 @@
 package com.fast.dev.acenter.annotation;
 
-import com.fast.dev.acenter.core.config.EurekaRegisterConfig;
+import com.fast.dev.acenter.core.config.ConsulRegisterConfig;
 import com.fast.dev.acenter.core.config.FeignConfig;
 import com.fast.dev.acenter.core.config.RestTemplateConfig;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
@@ -28,7 +28,7 @@ import java.lang.annotation.*;
 @Documented
 
 //载入RestTemplate 配置
-@Import({RestTemplateConfig.class, EurekaRegisterConfig.class, FeignConfig.class})
+@Import({RestTemplateConfig.class, ConsulRegisterConfig.class, FeignConfig.class})
 public @interface EnableApplicationClient {
 
 }

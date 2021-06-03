@@ -1,7 +1,7 @@
 package com.fast.dev.data.mongo.helper;
 
-import com.fast.dev.core.util.bean.BeanUtil;
 import com.fast.dev.data.mongo.domain.SuperEntity;
+import com.github.microservice.core.util.bean.BeanUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

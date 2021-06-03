@@ -1,6 +1,6 @@
 package demo.simple.controller;
 
-import com.fast.dev.core.util.result.InvokerResult;
+import com.github.microservice.core.util.result.InvokerResult;
 import demo.simple.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
