@@ -20,7 +20,7 @@ limit:
     service:
       url: "/config/*,/gateway/*,/push/*"
     actuator:
-      url: "/actuator,/actuator/*"
+      url: "/actuator,*/actuator/*"
       exclusion: "/actuator/health"
     manager:
       url: "*/manager/*,*/endpoints/*"

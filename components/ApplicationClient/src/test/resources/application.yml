@@ -13,7 +13,7 @@ spring:
       discovery:
         health-check-path: /actuator/health  # 检测实例健康
         health-check-interval: 10s   # 每隔10s检查
-        hostname: localhost    # 配置实例地址
+        hostname: 192.168.31.222    # 配置实例地址
         port: ${server.port}
         register: true  # 自动注册
         service-name: ${spring.application.name} # 实例名称
