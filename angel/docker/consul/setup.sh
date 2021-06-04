@@ -9,4 +9,4 @@ chmod -R 777 ./data
 
 
 # 重启服务
-docker-compose down ; docker-compose up 
+docker-compose down ; docker-compose up -d
