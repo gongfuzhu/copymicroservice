@@ -3,9 +3,10 @@ version: "3"
 services:
 
   consul_node0:
-    image: lianshufeng/consul
+    image: consul
     ports:
       - "8500:8500"
+      - "8600:8600/udp"
     container_name: consul_node0
     volumes:
       - "./data/node0:/data"
@@ -13,9 +14,10 @@ services:
     command: "consul agent -server -ui -bootstrap-expect=3 -node=consul_node0 -data-dir /data -client 0.0.0.0 -datacenter=dc1"
 
   consul_node1:
-    image: lianshufeng/consul
+    image: consul
     ports:
       - "8501:8500"
+      - "8601:8600/udp"
     container_name: consul_node1
     volumes:
       - "./data/node1:/data"
@@ -25,9 +27,10 @@ services:
       - consul_node0
 
   consul_node2:
-    image: lianshufeng/consul
+    image: consul
     ports:
       - "8502:8500"
+      - "8602:8600/udp"
     container_name: consul_node2
     volumes:
       - "./data/node2:/data"

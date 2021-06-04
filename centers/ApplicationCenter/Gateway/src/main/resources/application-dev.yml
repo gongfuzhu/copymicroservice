@@ -18,7 +18,7 @@ limit:
         accessCount: 10
         blockTime: 60
     service:
-      url: "/config/*,/gateway/*,/push/*"
+      url: "/config/*,/gateway/*,/push/*,/consul/*"
     actuator:
       url: "/actuator,*/actuator/*"
       exclusion: "/actuator/health"
@@ -46,16 +46,16 @@ spring:
 logging:
   file:
     name: logs/${project.artifactId}.log
-  level:
-    com:
-      github:
-        microservice:
-          gateway:
-            core: debug
-    org:
-      springframework:
-        cloud:
-          netflix: trace
-          gateway: trace
-debug: true
-trace: true
+#  level:
+#    com:
+#      github:
+#        microservice:
+#          gateway:
+#            core: debug
+#    org:
+#      springframework:
+#        cloud:
+#          netflix: trace
+#          gateway: trace
+#debug: true
+#trace: true

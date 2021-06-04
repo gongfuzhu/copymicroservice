@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.fast.dev.components</groupId>
+    <groupId>com.github.microservice.components</groupId>
     <artifactId>ApplicationClient</artifactId>
     <name>ApplicationClient</name>
 

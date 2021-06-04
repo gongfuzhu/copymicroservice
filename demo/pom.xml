@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.microservice</groupId>
-    <artifactId>Root</artifactId>
+    <artifactId>demo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
@@ -24,19 +24,9 @@
 
     <modules>
 
-        <!-- 核心 -->
-        <module>super/PConfigure</module>
-        <module>super/PParent</module>
-        <module>super/PCore</module>
-
-        <!-- 组件 -->
-        <module>components</module>
-
-        <!-- demo -->
-        <module>demo</module>
-
-        <!-- 中心 -->
-        <module>centers</module>
+        <module>feign/feignserver</module>
+        <module>feign/feignclient</module>
+        <module>feign/feigncall</module>
 
 
     </modules>

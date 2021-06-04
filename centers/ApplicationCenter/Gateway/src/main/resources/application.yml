@@ -17,6 +17,7 @@ spring:
         instance-id: ${spring.application.name}:${server.port}
       host: ${ApplicationCenter.url}
       port: ${ApplicationCenter.port}
+
     gateway:
       discovery:
         locator:
