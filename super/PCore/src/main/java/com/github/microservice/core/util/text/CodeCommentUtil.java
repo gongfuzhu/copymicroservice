@@ -28,6 +28,9 @@ public class CodeCommentUtil {
 
     @SneakyThrows
     public static String readFieldComment(Field field) {
+        if (field == null) {
+            return null;
+        }
         File sourceFile = toSourceFile(field.getDeclaringClass());
         if (sourceFile == null) {
             return null;

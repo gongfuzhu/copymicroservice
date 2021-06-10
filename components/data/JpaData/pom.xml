@@ -17,11 +17,11 @@
     <properties>
         <Hsqldb.version>2.5.0</Hsqldb.version>
         <JodaTime.version>2.10.5</JodaTime.version>
+        <mybatis.version>2.2.0</mybatis.version>
     </properties>
 
 
     <dependencies>
-
 
 
         <!-- 通用basedata -->
@@ -44,18 +44,26 @@
             <version>${Hsqldb.version}</version>
         </dependency>
 
-         <!--spring 数据源-->
+        <!--spring 数据源-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+
+
         <!--  JDBC 驱动-->
         <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<version>8.0.12</version>-->
+        <!--<groupId>mysql</groupId>-->
+        <!--<artifactId>mysql-connector-java</artifactId>-->
+        <!--<version>8.0.12</version>-->
         <!--</dependency>-->
 
 

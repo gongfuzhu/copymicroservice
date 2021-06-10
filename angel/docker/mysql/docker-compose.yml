@@ -9,6 +9,6 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: aiyihema2020
+      MYSQL_ROOT_PASSWORD: 687mysql2021
     volumes:
-      - /mnt/data/store/mysql:/var/lib/mysql
+      - ./store:/var/lib/mysql
