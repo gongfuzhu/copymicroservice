@@ -7,9 +7,9 @@ spring:
         hostname: 192.168.31.222   # 配置实例地址
 
 
-logging:
-  level:
-    org:
-      springframework: trace
-debug: true
-trace: true
+#logging:
+#  level:
+#    org:
+#      springframework: trace
+#debug: true
+#trace: true

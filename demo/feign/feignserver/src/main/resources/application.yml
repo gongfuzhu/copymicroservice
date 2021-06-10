@@ -36,7 +36,10 @@ spring:
     sampler:
       probability: ${Zipkin.sampler.probability}
 
-
+#开启断路器
+feign:
+  hystrix:
+    enabled: true
 
 
 #调试或者输出日志

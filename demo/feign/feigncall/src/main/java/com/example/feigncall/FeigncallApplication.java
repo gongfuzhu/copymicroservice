@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.example.feigncall.core")
 public class FeigncallApplication extends ApplicationBootSuper {
 
+
     public static void main(String[] args) {
         SpringApplication.run(FeigncallApplication.class, args);
     }

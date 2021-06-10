@@ -8,9 +8,9 @@ spring:
 
 
 
-logging:
-  level:
-    org:
-      springframework: trace
-debug: true
-trace: true
+#logging:
+#  level:
+#    org:
+#      springframework: trace
+#debug: true
+#trace: true
