@@ -1,6 +1,6 @@
 package demo.simple.domain;
 
-import com.fast.dev.data.jpa.es.domain.SuperEntity;
+import com.github.microservice.components.data.es.domain.SuperEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,6 @@
 package demo.simple.domain;
 
-import com.fast.dev.data.mongo.domain.SuperEntity;
-import com.fast.dev.data.timer.domain.SimpleTaskTimerTable;
+import com.github.microservice.components.data.mongo.mongo.domain.SuperEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

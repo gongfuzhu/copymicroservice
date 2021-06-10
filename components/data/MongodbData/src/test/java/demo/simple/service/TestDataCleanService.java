@@ -1,6 +1,6 @@
 package demo.simple.service;
 
-import com.fast.dev.data.mongo.data.MongoDataCleanTask;
+import com.github.microservice.components.data.mongo.mongo.data.MongoDataCleanTask;
 import demo.simple.domain.BaseUser;
 import org.springframework.stereotype.Component;
 

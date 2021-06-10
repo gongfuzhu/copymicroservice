@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.fast.dev.components</groupId>
+    <groupId>com.github.microservice.components</groupId>
     <artifactId>JpaData</artifactId>
 
 
@@ -26,7 +26,7 @@
 
         <!-- 通用basedata -->
         <dependency>
-            <groupId>com.fast.dev.components</groupId>
+            <groupId>com.github.microservice.components</groupId>
             <artifactId>BaseData</artifactId>
             <version>${Project.version}</version>
         </dependency>

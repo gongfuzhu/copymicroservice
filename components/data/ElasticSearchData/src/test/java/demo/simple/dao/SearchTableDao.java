@@ -1,9 +1,8 @@
 package demo.simple.dao;
 
-import com.fast.dev.data.jpa.es.dao.ElasticSearchDao;
+import com.github.microservice.components.data.es.dao.ElasticSearchDao;
 import demo.simple.dao.extend.SearchTableDaoExtend;
 import demo.simple.domain.SearchTable;
-import org.springframework.data.elasticsearch.annotations.Query;
 
 import java.util.List;
 

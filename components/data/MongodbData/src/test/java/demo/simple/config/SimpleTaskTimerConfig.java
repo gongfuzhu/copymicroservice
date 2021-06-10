@@ -1,7 +1,7 @@
 package demo.simple.config;
 
-import com.fast.dev.data.timer.config.TaskTimerConfiguration;
-import com.fast.dev.data.timer.event.SimpleTaskTimerEvent;
+import com.github.microservice.components.data.mongo.timer.config.TaskTimerConfiguration;
+import com.github.microservice.components.data.mongo.timer.event.SimpleTaskTimerEvent;
 import demo.simple.domain.TestTaskTimerTable1;
 import demo.simple.domain.TestTaskTimerTable2;
 import org.springframework.context.annotation.Configuration;

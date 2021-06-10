@@ -1,6 +1,6 @@
 package feign;
 
-import com.fast.dev.acenter.annotation.EnableApplicationClient;
+import com.github.microservice.app.annotation.EnableApplicationClient;
 import com.github.microservice.core.boot.ApplicationBootSuper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;

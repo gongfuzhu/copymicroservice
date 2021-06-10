@@ -1,6 +1,6 @@
 package com.example.feigncall;
 
-import com.fast.dev.acenter.annotation.EnableApplicationClient;
+import com.github.microservice.app.annotation.EnableApplicationClient;
 import com.github.microservice.core.boot.ApplicationBootSuper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

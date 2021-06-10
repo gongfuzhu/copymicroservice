@@ -1,6 +1,6 @@
 package demo.simple.dao;
 
-import com.fast.dev.data.jpa.Dao.JpaDataDao;
+import com.github.microservice.components.data.jpa.Dao.JpaDataDao;
 import demo.simple.dao.extend.UserDaoExtend;
 import demo.simple.domain.User;
 import org.springframework.data.domain.Page;

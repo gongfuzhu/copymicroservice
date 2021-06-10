@@ -1,6 +1,6 @@
 package demo.simple.dao;
 
-import com.fast.dev.data.mongo.dao.MongoDao;
+import com.github.microservice.components.data.mongo.mongo.dao.MongoDao;
 import demo.simple.dao.extend.UserDaoExtend;
 import demo.simple.domain.User;
 import org.springframework.data.domain.Page;

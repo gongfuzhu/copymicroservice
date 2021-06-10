@@ -17,6 +17,14 @@ spring:
           uri: https://github.com/lianshufeng/MicroService.git
           search-paths: centers/ApplicationCenter/Config/src/main/resources/config/**
           force-pull: true
+          proxy:
+            HTTPS:
+              host: 127.0.0.1
+              port: 808
+            HTTP:
+              host: 127.0.0.1
+              port: 808
+
 #          username: aiyihema
 #          password: aiyihema
 

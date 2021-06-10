@@ -24,7 +24,7 @@
     </properties>
 
 
-    <groupId>com.fast.dev.acenter</groupId>
+    <groupId>com.github.microservice</groupId>
     <artifactId>Gateway</artifactId>
 
 

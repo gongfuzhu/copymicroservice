@@ -1,6 +1,6 @@
 package com.github.microservice.gateway.boot;
 
-import com.fast.dev.acenter.core.config.ConsulRegisterConfig;
+import com.github.microservice.app.core.config.ConsulRegisterConfig;
 import com.github.microservice.core.runner.BannerApplicationRunner;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;

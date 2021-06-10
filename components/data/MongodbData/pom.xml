@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.fast.dev.components</groupId>
+    <groupId>com.github.microservice.components</groupId>
     <artifactId>MongodbData</artifactId>
 
 
@@ -24,7 +24,7 @@
 
         <!-- 通用basedata -->
         <dependency>
-            <groupId>com.fast.dev.components</groupId>
+            <groupId>com.github.microservice.components</groupId>
             <artifactId>BaseData</artifactId>
             <version>${Project.version}</version>
         </dependency>
@@ -64,6 +64,12 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
             <version>${spring-data-mongodb.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-data-commons</artifactId>
+                    <groupId>org.springframework.data</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
 

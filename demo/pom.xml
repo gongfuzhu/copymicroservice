@@ -24,6 +24,8 @@
 
     <modules>
 
+        <module>data/mongo</module>
+
         <module>feign/feignserver</module>
         <module>feign/feignclient</module>
         <module>feign/feigncall</module>

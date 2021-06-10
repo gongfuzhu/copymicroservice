@@ -197,7 +197,7 @@
 
         <!-- spring data jpa -->
         <dependency>
-            <groupId>com.fast.dev.components</groupId>
+            <groupId>com.github.microservice.components</groupId>
             <artifactId>BaseData</artifactId>
             <version>${Project.version}</version>
         </dependency>

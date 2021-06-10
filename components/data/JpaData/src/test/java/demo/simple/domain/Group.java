@@ -1,6 +1,6 @@
 package demo.simple.domain;
 
-import com.fast.dev.data.jpa.domain.SuperEntity;
+import com.github.microservice.components.data.jpa.domain.SuperEntity;
 import lombok.Data;
 
 import javax.persistence.CascadeType;

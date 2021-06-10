@@ -1,6 +1,6 @@
 package demo.simple.config;
 
-import com.fast.dev.data.jpa.config.JpaDataConfiguration;
+import com.github.microservice.components.data.jpa.config.JpaDataConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;

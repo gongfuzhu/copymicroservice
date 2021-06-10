@@ -1,16 +1,13 @@
 package com.github.microservice.applicationserver;
 
-import com.fast.dev.acenter.annotation.EnableApplicationClient;
+import com.github.microservice.app.annotation.EnableApplicationClient;
 import com.github.microservice.core.boot.ApplicationBootSuper;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 
 @EnableConfigServer
 @EnableApplicationClient
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class ConfigApplication extends ApplicationBootSuper {
 
     /**

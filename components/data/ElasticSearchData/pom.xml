@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.fast.dev.components</groupId>
+    <groupId>com.github.microservice.components</groupId>
     <artifactId>ElasticSearchData</artifactId>
 
 
@@ -33,7 +33,7 @@
 
         <!-- 通用basedata -->
         <dependency>
-            <groupId>com.fast.dev.components</groupId>
+            <groupId>com.github.microservice.components</groupId>
             <artifactId>BaseData</artifactId>
             <version>${Project.version}</version>
         </dependency>
@@ -62,6 +62,12 @@
                     <artifactId>elasticsearch-rest-high-level-client</artifactId>
                     <groupId>org.elasticsearch.client</groupId>
                 </exclusion>
+
+                <exclusion>
+                    <artifactId>spring-data-commons</artifactId>
+                    <groupId>org.springframework.data</groupId>
+                </exclusion>
+
             </exclusions>
         </dependency>
 

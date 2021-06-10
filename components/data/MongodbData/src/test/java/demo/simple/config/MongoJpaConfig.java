@@ -1,6 +1,6 @@
 package demo.simple.config;
 
-import com.fast.dev.data.mongo.config.MongoConfiguration;
+import com.github.microservice.components.data.mongo.mongo.config.MongoConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;

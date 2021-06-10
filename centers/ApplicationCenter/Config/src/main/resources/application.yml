@@ -49,4 +49,5 @@ management:
 logging:
   file:
     name: logs/${project.artifactId}.log
-#debug: true
+debug: true
+#trace: true

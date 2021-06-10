@@ -1,7 +1,7 @@
 package demo.simple.domain;
 
-import com.fast.dev.data.base.data.annotations.sync.DataSync;
-import com.fast.dev.data.mongo.domain.SuperEntity;
+import com.github.microservice.components.data.base.data.annotations.sync.DataSync;
+import com.github.microservice.components.data.mongo.mongo.domain.SuperEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;

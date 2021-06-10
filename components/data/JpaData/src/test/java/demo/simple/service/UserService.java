@@ -1,6 +1,6 @@
 package demo.simple.service;
 
-import com.fast.dev.data.base.util.PageEntityUtil;
+import com.github.microservice.components.data.base.util.PageEntityUtil;
 import demo.simple.dao.UserDao;
 import demo.simple.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;

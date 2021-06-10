@@ -1,9 +1,9 @@
 package demo.simple.controller;
 
 
-import com.fast.dev.data.mongo.helper.DBHelper;
-import com.fast.dev.data.token.service.ResourceTokenService;
-import com.fast.dev.data.token.service.impl.ResourceTokenServiceImpl;
+import com.github.microservice.components.data.mongo.mongo.helper.DBHelper;
+import com.github.microservice.components.data.mongo.token.service.ResourceTokenService;
+import com.github.microservice.components.data.mongo.token.service.impl.ResourceTokenServiceImpl;
 import com.mongodb.DBRef;
 import demo.simple.dao.UserDao;
 import demo.simple.service.UserService;

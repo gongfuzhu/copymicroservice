@@ -1,0 +1,19 @@
+
+spring:
+  cloud:
+    #配置计算机名
+    consul:
+      discovery:
+        hostname: 192.168.31.222   # 配置实例地址
+  data:
+    mongodb:
+      uri: mongodb://test:test@192.168.63.130:27017,192.168.63.130:27018,192.168.63.130:27019,192.168.63.130:27020/test?replicaSet=MongoSets
+      auto-index-creation: true
+
+
+#logging:
+#  level:
+#    org:
+#      springframework: trace
+#debug: true
+#trace: true

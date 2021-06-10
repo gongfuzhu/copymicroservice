@@ -1,7 +1,6 @@
 package demo.simple.service;
 
-import com.fast.dev.data.base.data.DataHelper;
-import com.fast.dev.data.base.data.DataSyncHelper;
+import com.github.microservice.components.data.base.data.DataSyncHelper;
 import com.mongodb.client.result.UpdateResult;
 import demo.simple.dao.UserDao;
 import demo.simple.domain.User;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
