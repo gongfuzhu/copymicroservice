@@ -1,0 +1,22 @@
+
+spring:
+  cloud:
+    consul:
+      discovery:
+        hostname: 192.168.31.222   # 配置实例地址
+    stream:
+      function:
+        definition: consumer
+      bindings:
+        consumer-in-0:
+          destination: test-stream
+          group: test-stream
+
+
+
+#logging:
+#  level:
+#    org:
+#      springframework: trace
+#debug: true
+#trace: true

@@ -24,8 +24,6 @@
 
     <modules>
 
-
-
         <module>feign/feignserver</module>
         <module>feign/feignclient</module>
         <module>feign/feigncall</module>
@@ -34,6 +32,7 @@
         <module>data/mongo</module>
         <module>data/mysql</module>
 
+        <module>stream</module>
 
     </modules>
 

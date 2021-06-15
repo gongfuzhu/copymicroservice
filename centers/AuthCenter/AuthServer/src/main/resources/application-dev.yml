@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    #配置计算机名
+    consul:
+      discovery:
+        hostname: 192.168.31.222   # 配置实例地址
+  redis:
+    host: 192.168.63.130
+    port: 6379
+    database: 2
+
+
+user:
+  oauth:
+    clientId: R2dpxQ3vPrtfgF72
+    clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
+    redirectUris: http://localhost:8082/login/oauth2/code/
+    user:
+      username: Andrew
+      password: abcd
+
+
+
+#logging:
+#  level:
+#    org:
+#      springframework: trace
+#debug: true
+#trace: true

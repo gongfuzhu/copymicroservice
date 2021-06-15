@@ -28,6 +28,11 @@
         <module>ApplicationCenter/Gateway</module>
         <module>ApplicationCenter/Config</module>
 
+        <!-- 鉴权中心 -->
+        <module>AuthCenter/AuthClient</module>
+        <module>AuthCenter/AuthServer</module>
+
+
 
 
     </modules>

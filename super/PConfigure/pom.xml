@@ -23,7 +23,15 @@
 
         <!--spring cloud 版本-->
         <spring-mvc.version>5.3.7</spring-mvc.version>
-        <spring-security.version>5.4.6</spring-security.version>
+
+        <!-- auth2.0-->
+        <spring-security-core.version>5.5.0</spring-security-core.version>
+        <spring-security-oauth2.version>2.5.1.RELEASE</spring-security-oauth2.version>
+<!--        <spring-security-oauth2.version>2.3.8.RELEASE</spring-security-oauth2.version>-->
+
+        <spring-boot-starter-security.version>2.5.0</spring-boot-starter-security.version>
+        <spring-security-oauth2-authorization-server.version>0.1.1</spring-security-oauth2-authorization-server.version>
+
 
         <spring-cloud-dependencies.version>2020.0.3</spring-cloud-dependencies.version>
         <spring-cloud.version>3.0.3</spring-cloud.version>
@@ -105,8 +113,6 @@
 
         <!--文件中心-->
         <FileCenter.port>8400</FileCenter.port>
-
-
 
 
         <!--机器人验证码端口-->
