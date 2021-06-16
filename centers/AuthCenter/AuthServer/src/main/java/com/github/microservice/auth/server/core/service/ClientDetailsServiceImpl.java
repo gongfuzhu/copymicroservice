@@ -1,11 +1,16 @@
 package com.github.microservice.auth.server.core.service;
 
+import com.github.microservice.auth.server.core.conf.AuthConf;
+import com.github.microservice.auth.server.core.dao.ApplicationClientDao;
+import com.github.microservice.auth.server.core.domain.ApplicationClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -18,18 +23,16 @@ import java.util.Set;
 @Primary
 public class ClientDetailsServiceImpl implements ClientDetailsService, Serializable {
 
+    @Autowired
+    private ApplicationClientDao applicationClientDao;
+
+    @Autowired
+    private AuthConf authConf;
+
     @Override
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
-//
-//        clients.inMemory()
-//                .withClient("client")
-//                .secret("secret")
-//                .authorizedGrantTypes("client_credentials", "password", "refresh_token")
-//                .scopes("all")
-//                .resourceIds("oauth2-resource")
-//                .accessTokenValiditySeconds(1200)
-//                .refreshTokenValiditySeconds(50000);
-
+        final ApplicationClient applicationClient = this.applicationClientDao.findByClientId(clientId);
+        Assert.isTrue(applicationClient != null, "应用客户端错误");
 
         return new ClientDetails() {
             @Override
@@ -49,7 +52,7 @@ public class ClientDetailsServiceImpl implements ClientDetailsService, Serializa
 
             @Override
             public String getClientSecret() {
-                return "secret";
+                return applicationClient.getSecret();
             }
 
             @Override
@@ -64,7 +67,7 @@ public class ClientDetailsServiceImpl implements ClientDetailsService, Serializa
 
             @Override
             public Set<String> getAuthorizedGrantTypes() {
-                return Set.of("client_credentials", "password", "refresh_token");
+                return applicationClient.getAuthorizedGrantTypes();
             }
 
             @Override
@@ -79,12 +82,12 @@ public class ClientDetailsServiceImpl implements ClientDetailsService, Serializa
 
             @Override
             public Integer getAccessTokenValiditySeconds() {
-                return 1200;
+                return authConf.getAccessTokenValiditySeconds();
             }
 
             @Override
             public Integer getRefreshTokenValiditySeconds() {
-                return 50000;
+                return authConf.getRefreshTokenValiditySeconds();
             }
 
             @Override

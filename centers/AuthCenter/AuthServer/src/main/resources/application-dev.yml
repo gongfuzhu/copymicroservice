@@ -8,16 +8,11 @@ spring:
     host: 192.168.63.130
     port: 6379
     database: 2
+  data:
+    mongodb:
+      uri: mongodb://auth:auth@192.168.63.130:27017,192.168.63.130:27018,192.168.63.130:27019,192.168.63.130:27020/auth?replicaSet=MongoSets
+      auto-index-creation: true
 
-
-user:
-  oauth:
-    clientId: R2dpxQ3vPrtfgF72
-    clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
-    redirectUris: http://localhost:8082/login/oauth2/code/
-    user:
-      username: Andrew
-      password: abcd
 
 
 
