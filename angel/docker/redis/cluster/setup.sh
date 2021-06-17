@@ -36,7 +36,7 @@ firewall-cmd --reload
 function updateRedis(){
 	
 	#下载配置
-	wget https://raw.githubusercontent.com/antirez/redis/5.0/redis.conf -O $(pwd)/redis.conf  
+	wget https://raw.githubusercontent.com/redis/redis/unstable/redis.conf -O $(pwd)/redis.conf
 
 	#启用集群模式
 	sed -i 's/# cluster-enabled/cluster-enabled/g' $(pwd)/redis.conf
