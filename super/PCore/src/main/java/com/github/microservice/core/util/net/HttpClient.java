@@ -1,7 +1,13 @@
 package com.github.microservice.core.util.net;
 
+import lombok.SneakyThrows;
+
+import javax.net.ssl.*;
 import java.io.*;
 import java.net.*;
+import java.security.SecureRandom;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +20,41 @@ import java.util.Map;
  * 
  */
 public class HttpClient {
+
+	static {
+		init();
+	}
+
+	@SneakyThrows
+	private static void init(){
+		SSLContext sslcontext = SSLContext.getInstance("SSL", "SunJSSE");//第一个参数为协议,第二个参数为提供者(可以缺省)
+		TrustManager[] tm = {new X509TrustManager(){
+
+			@Override
+			public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+
+			}
+
+			@Override
+			public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+
+			}
+
+			@Override
+			public X509Certificate[] getAcceptedIssuers() {
+				return new X509Certificate[0];
+			}
+		}};
+		sslcontext.init(null, tm, new SecureRandom());
+		HostnameVerifier ignoreHostnameVerifier = new HostnameVerifier() {
+			public boolean verify(String s, SSLSession sslsession) {
+				System.out.println("WARNING: Hostname is not matched for cert.");
+				return true;
+			}
+		};
+		HttpsURLConnection.setDefaultHostnameVerifier(ignoreHostnameVerifier);
+		HttpsURLConnection.setDefaultSSLSocketFactory(sslcontext.getSocketFactory());
+	}
 
 	private static final String CHARSET = "charset";
 
@@ -152,7 +193,6 @@ public class HttpClient {
 	 * @param url
 	 * @param isPost
 	 * @param
-	 *            POST专用的参数
 	 * @return
 	 * @throws IOException
 	 */
@@ -174,6 +214,7 @@ public class HttpClient {
 			throws IOException {
 		return ReadDocuments(new URL(url), isPost, postData, requestHead, null);
 	}
+
 
 	public ResultBean ReadDocuments(final URL url, final boolean isPost, final byte[] postData,
 			Map<String, String> requestHead, Boolean onlyHead) throws IOException {
@@ -317,7 +358,7 @@ public class HttpClient {
 			}
 	}
 
-	private String getInnerCookies() {
+	public String getInnerCookies() {
 		String result = "";
 		for (String key : this.cookies.keySet()) {
 			result += key + "=" + this.cookies.get(key) + "; ";
