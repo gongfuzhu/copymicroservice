@@ -2,7 +2,7 @@ version: "3"
 
 services:
   kafka:
-    image: registry.cn-chengdu.aliyuncs.com/1s/kafka
+    image: lianshfueng/kafka
     ports:
       - "8822:22"      
       - "9092:9092"
