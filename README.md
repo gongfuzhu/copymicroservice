@@ -1,13 +1,13 @@
-# Fast
+# Framework
 Spring cloud and boot Framework
 
 
 ## 依赖
-- netflix-eureka
+- consol
 - starter-config
 - spring-cloud-bus
 - starter-zipkin 
-- netflix-zuul
+- spring gateway
 - starter-openfeign
 
 
@@ -19,7 +19,7 @@ Spring cloud and boot Framework
 
 	
 ## 环境
-- JDK 1.8+ 
+- JDK 11+ 
 - IDE idea (推荐插件) 
     - lombok plugin 
     - Spring Assistant 
@@ -29,7 +29,6 @@ Spring cloud and boot Framework
     - cmd Support
  
 ## 编译与部署
-- war : 注意修改拷贝到tomcat运行(注意：本地端口与上下文)
 - jar : 需要修改pom配置
 
 
@@ -76,5 +75,3 @@ Spring cloud and boot Framework
         - spring data jpa es
         
         
-- 注意：
-    - idea 中启动，需要使用环境 DevelopmentRunTime

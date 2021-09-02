@@ -1,3 +1,16 @@
+#spring.cloud.stream:
+# bindings:
+#   promiseStreamConsumer-in-0:
+#     group: ${project.artifactId}
+#     destination: ${project.artifactId}_PromiseStream
+# kafka:
+#   bindings:
+#     promiseStreamConsumer-in-0:
+#       consumer:
+#         enableDlq: true
+#         dlqName: input-topic-dlq
+# 死信
+
 
 spring:
   cloud:

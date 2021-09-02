@@ -1,0 +1,44 @@
+
+spring:
+  cloud:
+    consul:
+      discovery:
+        hostname: 192.168.8.154   # 配置实例地址
+
+
+  cache: #缓存配置
+    caffeine:
+      spec: maximumSize=9999,expireAfterWrite=36000s
+    type: caffeine
+    cache-names:
+      - UserToken
+
+swagger:
+  packageName: "com.example.auth.core.controller"
+  title: "权限demo"
+  description: "权限demo"
+  version: "1.0"
+  enable: true
+  globalRequestParameters:
+    - name: "accessToken"
+      description: "用户访问令牌"
+      parameterType: "HEADER"
+
+
+
+logging:
+  level:
+    com:
+      github:
+        microservice:
+          auth:
+            security: debug
+debug: true
+
+#logging:
+#  level:
+#    org:
+#      springframework: trace
+#debug: true
+
+#trace: true

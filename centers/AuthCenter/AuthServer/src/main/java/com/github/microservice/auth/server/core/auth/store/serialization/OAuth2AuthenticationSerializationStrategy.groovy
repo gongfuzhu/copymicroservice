@@ -1,19 +1,16 @@
 package com.github.microservice.auth.server.core.auth.store.serialization
 
-import com.github.microservice.auth.client.type.GrantType
-import com.github.microservice.auth.server.core.auth.AuthHelper
+
+import com.github.microservice.auth.server.core.auth.endpoint.AuthHelper
 import com.github.microservice.core.util.JsonUtil
-import org.apache.kafka.common.config.types.Password
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
-import org.springframework.security.core.Authentication
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.oauth2.provider.OAuth2Authentication
 import org.springframework.security.oauth2.provider.OAuth2Request
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStoreSerializationStrategy
-import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken
 
 import java.nio.charset.StandardCharsets
 import java.util.stream.Collectors
@@ -58,25 +55,6 @@ class OAuth2AuthenticationSerializationStrategy implements RedisTokenStoreSerial
         Map<String, Object> userAuthenticationMap = oAuth2AuthenticationMap.get("userAuthentication");
 
 
-//        Authentication authentication = null
-//        if (authHelper.getAuthProcess().getGrantType() == GrantType.password) {
-//            authentication = new UsernamePasswordAuthenticationToken(
-//                    userAuthenticationMap.get("principal"),
-//                    userAuthenticationMap.get("credentials"),
-//                    ((Collection) userAuthenticationMap.get("authorities")).stream().map((item) -> {
-//                        return new GrantedAuthority() {
-//                            @Override
-//                            String getAuthority() {
-//                                return item['authority']
-//                            }
-//                        }
-//                    }).collect(Collectors.toSet())
-//            )
-//        } else if (authHelper.getAuthProcess().getGrantType() == GrantType.refresh_token) {
-//            authentication = null
-//        }
-
-//                        userAuthenticationMap.get("principal"),
         def principal = userAuthenticationMap.get("principal")
         UserDetails userDetails = new User(
                 principal['username'],

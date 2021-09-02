@@ -227,4 +227,13 @@ public class PageEntityUtil {
     }
 
 
+    /**
+     * 构建一个空分页对象
+     *
+     * @return
+     */
+    public static <T> Page<T> buildPage(List<T> content, Pageable pageable, long total) {
+        return new PageImpl<T>(content, pageable, total);
+    }
+
 }

@@ -32,6 +32,11 @@
         <module>data/MongodbData</module>
         <module>data/RedisData</module>
 
+        
+        <module>Swagger2</module>
+        <module>PushCenterClient</module>
+        <module>ActiveMQ</module>
+
     </modules>
 
 

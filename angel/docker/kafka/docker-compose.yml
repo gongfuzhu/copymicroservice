@@ -2,7 +2,7 @@ version: "3"
 
 services:
   kafka:
-    image: lianshfueng/kafka
+    image: lianshufeng/kafka
     ports:
       - "8822:22"      
       - "9092:9092"

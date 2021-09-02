@@ -1,14 +1,13 @@
 #Web服务器端口
 server:
-  port: 8080
+  port: ${AuthCenter.port}
 
 #允许消息总线
 spring:
-  application:
-    name: ${project.artifactId}
   cloud:
     consul:
       discovery:
+        prefer-ip-address: true # ip自动注册
         hostname: localhost    # 配置实例地址
         port: ${server.port}
         health-check-path: /actuator/health  # 检测实例健康
@@ -24,6 +23,12 @@ spring:
         binder:
           brokers: ${Kafka.brokers}
           replication-factor: 1
+      function:
+        definition: userLogStreamConsumer
+      bindings:
+        userLogStreamConsumer-in-0:
+          destination: UserLogStream
+          group: ${project.artifactId}
     bus:
       enabled: true
   #配置zipkin链路追踪客户端
@@ -38,8 +43,9 @@ spring:
 
 
 
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
+
+
+
 
 
 #调试或者输出日志

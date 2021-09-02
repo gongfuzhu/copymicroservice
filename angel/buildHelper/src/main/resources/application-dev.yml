@@ -1,0 +1,14 @@
+build:
+  task:
+    core-project: IT/MicroService
+  git:
+    type: Gogs
+    core: MicroService
+    host: http://192.168.8.228:3000/
+    userName: zhichen
+    passWord: zhichen687
+    token: 9517a9645aebc783f1f1a57320e582aec0386f87
+
+
+  maven:
+    home: "D:/sdk/apache-maven-3.8.1"

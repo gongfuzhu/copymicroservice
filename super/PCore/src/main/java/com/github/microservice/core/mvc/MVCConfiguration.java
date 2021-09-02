@@ -63,8 +63,9 @@ public class MVCConfiguration implements WebMvcConfigurer {
         log.info("disk : " + diskPath);
         registry.addResourceHandler("/" + StaticResources + "/**")
                 .addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX + "/" + StaticResources + "/")
-                .addResourceLocations(diskPath)
-        ;
+                .addResourceLocations(diskPath);
+
+
     }
 
 
@@ -142,21 +143,5 @@ public class MVCConfiguration implements WebMvcConfigurer {
     }
 
 
-    @Bean
-    public JsonHelper jsonHelper() {
-        return new JsonHelper();
-    }
-
-
-    @Bean
-    public ViewHelper viewHelper() {
-        return new ViewHelper();
-    }
-
-
-    @Bean
-    public SpringBeanHelper springBeanHelper() {
-        return new SpringBeanHelper();
-    }
 
 }

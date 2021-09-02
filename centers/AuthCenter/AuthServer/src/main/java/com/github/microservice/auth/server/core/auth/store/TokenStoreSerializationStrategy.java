@@ -18,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@SuppressWarnings("deprecation")
 public class TokenStoreSerializationStrategy implements RedisTokenStoreSerializationStrategy {
 
     @Autowired

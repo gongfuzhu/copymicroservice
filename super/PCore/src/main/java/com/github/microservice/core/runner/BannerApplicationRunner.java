@@ -9,8 +9,7 @@ import java.util.Arrays;
  * 项目启动完毕后，打印banner
  */
 public class BannerApplicationRunner implements ApplicationRunner {
-    private final static String lines = "\n" +
-            "        \\          Go!!!            /\n" +
+    private final static String lines = "        \\          Go!!!            /\n" +
             "         \\                         /\n" +
             "          \\                       /\n" +
             "           ]                     [    ,'|\n" +
@@ -31,7 +30,16 @@ public class BannerApplicationRunner implements ApplicationRunner {
             "           ]                     [\n" +
             "          /                       \\\n" +
             "         /                         \\\n" +
-            "        /                           \\";
+            "        /                           \\\n" +
+            "\n" +
+            "  __  __   _                          _____                         _               \n" +
+            " |  \\/  | (_)                        / ____|                       (_)              \n" +
+            " | \\  / |  _    ___   _ __    ___   | (___     ___   _ __  __   __  _    ___    ___ \n" +
+            " | |\\/| | | |  / __| | '__|  / _ \\   \\___ \\   / _ \\ | '__| \\ \\ / / | |  / __|  / _ \\\n" +
+            " | |  | | | | | (__  | |    | (_) |  ____) | |  __/ | |     \\ V /  | | | (__  |  __/\n" +
+            " |_|  |_| |_|  \\___| |_|     \\___/  |_____/   \\___| |_|      \\_/   |_|  \\___|  \\___|"
+
+            ;
 
 //    private String lines = "                _____________________\n" +
 //            "               (<$$$$$$>#####<::::::>)\n" +

@@ -26,7 +26,7 @@
 
 
 <div id="app">
-    <h1>艾艺荷马—JAVA项目编译</h1>
+    <h1>微服务-编译平台</h1>
     <el-tabs v-model="tabActiveName" @tab-click="tabHandleClick">
         <!-- 1、tab页1 项目列表 -->
         <el-tab-pane label="项目列表" name="first" class="base-info">
@@ -253,7 +253,7 @@
                 this.$prompt('将要对' + item.name + '编译，请输入需要过滤的包名：', '提示', {
                     confirmButtonText: '立即编译',
                     cancelButtonText: '取消',
-                    inputPlaceholder: 'e.g. com.fast.dev.PayCenterServer'
+                    inputPlaceholder: 'e.g. com.github.microservice.Gateway'
 
                 }).then(({value}) => {
                     post('/task/add', {
@@ -285,7 +285,7 @@
                 this.$prompt('将要进行全局编译，请输入需要过滤的包名：', '提示', {
                     confirmButtonText: '立即编译',
                     cancelButtonText: '取消',
-                    inputPlaceholder: 'e.g. com.fast.dev.PayCenterServer'
+                    inputPlaceholder: 'e.g. com.github.microservice.Gateway'
 
                 }).then(({value}) => {
                     post('/task/add', {

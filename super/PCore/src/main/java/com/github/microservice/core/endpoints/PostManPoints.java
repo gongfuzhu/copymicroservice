@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
 /**
  * 增加PostMan导入 api
  */
-@RestController
+//@RestController //取消掉
 public class PostManPoints extends SuperEndpoints {
 
     @Autowired

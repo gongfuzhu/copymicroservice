@@ -4,9 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.beans.factory.support.DefaultSingletonBeanRegistry;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigUtils;
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * SpringBean的助手，动态加载spring的bean类
@@ -17,11 +21,16 @@ public class SpringBeanHelper {
     @Autowired
     private ConfigurableBeanFactory beanFactory;
 
+    @Autowired
+    private ApplicationContext applicationContext;
+
 
     private AutowiredAnnotationBeanPostProcessor aabpp;
 
 
     private CommonAnnotationBeanPostProcessor cabpp;
+
+    private Map<String, String> beanNameCache = new ConcurrentHashMap<>();
 
 
     @Autowired
@@ -86,5 +95,22 @@ public class SpringBeanHelper {
         defaultSingletonBeanRegistry.destroySingleton(beanName);
     }
 
+
+    /**
+     * 取对象的BeanName
+     *
+     * @param o
+     * @return
+     */
+    public String getBeanName(Object o) {
+        Class<?> cls = o.getClass();
+        String beanName = beanNameCache.get(cls.getSimpleName());
+        if (beanName == null) {
+            for (String name : this.applicationContext.getBeansOfType(cls).keySet()) {
+                return name;
+            }
+        }
+        return null;
+    }
 
 }

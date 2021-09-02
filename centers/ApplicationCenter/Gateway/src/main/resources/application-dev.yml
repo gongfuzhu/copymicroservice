@@ -8,7 +8,6 @@
 
 
 
-
 limit:
   roles:
     firewall:
@@ -30,15 +29,17 @@ limit:
       exclusion: "/openapi/*"
 
 
-
 spring:
   cloud:
-    #配置计算机名
-    consul:
-      discovery:
-        hostname: 192.168.31.222   # 配置实例地址
+    inetutils:
+      preferred-networks:
+        - 192.168
+#    consul:
+#      discovery:
+#        hostname: 192.168.8.225
+#        prefer-ip-address: false
   redis:
-    host: 192.168.63.130
+    host: 192.168.8.226
     port: 6379
     database: 6
 

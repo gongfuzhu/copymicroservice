@@ -26,6 +26,12 @@ spring:
         binder:
           brokers: ${Kafka.brokers}
           replication-factor: 1
+      function:
+        definition: authEventStreamConsumer
+      bindings:
+        authEventStreamConsumer-in-0:
+          destination: AuthEventStream
+          group: null
     bus:
       enabled: true
   #配置zipkin链路追踪客户端
@@ -37,7 +43,12 @@ spring:
   sleuth:
     sampler:
       probability: ${Zipkin.sampler.probability}
-
+  cache: #缓存配置
+    caffeine:
+      spec: maximumSize=9999,expireAfterWrite=36000s
+    type: caffeine
+    cache-names:
+      - UserToken
 
 #允许端点
 management:

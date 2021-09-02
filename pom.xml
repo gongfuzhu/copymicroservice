@@ -30,12 +30,22 @@
         <!-- 组件 -->
         <module>components</module>
 
-        <!-- demo -->
-        <!--        <module>demo</module>-->
-
         <!-- 中心 -->
         <module>centers</module>
 
+
+        <!-- demo -->
+<!--        <module>demo</module>-->
+<!---->
+<!--        <module>application/EnterpriseCenter</module>-->
+<!--        <module>application/UserCenter</module>-->
+<!--        <module>application/MessageCenter</module>-->
+<!--        <module>application/PushCenter</module>-->
+<!--        <module>application/FlowEngine</module>-->
+<!--        <module>application/signature</module>-->
+<!--        <module>application/baidupandl</module>-->
+
+        <module>angel/buildHelper</module>
 
     </modules>
 

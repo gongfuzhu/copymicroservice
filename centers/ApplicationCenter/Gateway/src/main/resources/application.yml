@@ -8,6 +8,7 @@ spring:
   cloud:
     consul:
       discovery:
+        prefer-ip-address: true # ip自动注册
         hostname: localhost    # 配置实例地址
         port: ${server.port}
         health-check-path: /actuator/health  # 检测实例健康

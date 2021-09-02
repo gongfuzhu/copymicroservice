@@ -2,6 +2,7 @@ package com.github.microservice.app.annotation;
 
 import com.github.microservice.app.core.config.ConsulRegisterConfig;
 import com.github.microservice.app.core.config.FeignConfig;
+import com.github.microservice.app.core.config.PromiseConfig;
 import com.github.microservice.app.core.config.RestTemplateConfig;
 import com.github.microservice.app.stream.StreamConfig;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
@@ -29,7 +30,15 @@ import java.lang.annotation.*;
 @Documented
 
 //载入RestTemplate 配置
-@Import({RestTemplateConfig.class, ConsulRegisterConfig.class, FeignConfig.class, StreamConfig.class})
+@Import({
+        RestTemplateConfig.class,
+        ConsulRegisterConfig.class,
+        FeignConfig.class,
+        StreamConfig.class
+})
+
+//选配加载
+//PromiseConfig.class
 public @interface EnableApplicationClient {
 
 }

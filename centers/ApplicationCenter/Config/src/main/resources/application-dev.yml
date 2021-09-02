@@ -6,10 +6,9 @@
 
 spring:
   cloud:
-    #配置计算机名
-    consul:
-      discovery:
-        hostname: 192.168.31.222   # 配置实例地址
+    inetutils:
+      preferred-networks:
+        - 192.168
     #配置中心
     config:
       server:
@@ -17,13 +16,13 @@ spring:
           uri: https://github.com/lianshufeng/MicroService.git
           search-paths: centers/ApplicationCenter/Config/src/main/resources/config/**
           force-pull: true
-          proxy:
-            HTTPS:
-              host: 127.0.0.1
-              port: 808
-            HTTP:
-              host: 127.0.0.1
-              port: 808
+          # proxy:
+            # HTTPS:
+              # host: 127.0.0.1
+              # port: 808
+            # HTTP:
+              # host: 127.0.0.1
+              # port: 808
 
 #          username: aiyihema
 #          password: aiyihema

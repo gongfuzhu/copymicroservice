@@ -131,7 +131,7 @@ public class DBHelper {
      * @param <T>
      * @return
      */
-    public <T> Page<T> pages(Query query, Pageable pageable, Class cls) {
+    public <T> Page<T> pages(Query query, Pageable pageable, Class<T> cls) {
         long total = this.mongoTemplate.count(query, cls);
         query.with(pageable);
         return new PageImpl<T>(this.mongoTemplate.find(query, cls), pageable, total);
