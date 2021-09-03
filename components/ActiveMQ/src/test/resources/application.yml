@@ -5,4 +5,4 @@ spring:
     #用户名
     user: admin
     #密码
-    password: admin
+    password: password

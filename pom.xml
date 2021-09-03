@@ -45,7 +45,7 @@
 <!--        <module>application/signature</module>-->
 <!--        <module>application/baidupandl</module>-->
 
-        <module>angel/buildHelper</module>
+<!--        <module>angel/buildHelper</module>-->
 
     </modules>
 

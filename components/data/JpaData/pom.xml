@@ -15,8 +15,8 @@
 
 
     <properties>
-        <Hsqldb.version>2.5.0</Hsqldb.version>
-        <JodaTime.version>2.10.5</JodaTime.version>
+        <Hsqldb.version>2.6.0</Hsqldb.version>
+        <JodaTime.version>2.10.10</JodaTime.version>
         <mybatis.version>2.2.0</mybatis.version>
     </properties>
 
