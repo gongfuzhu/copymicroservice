@@ -1,7 +1,7 @@
 #默认端口号
 server:
   port: ${GetWayCenter.port}
-
+  max-http-header-size: 10MB
 
 #允许消息总线
 spring:
@@ -20,6 +20,10 @@ spring:
       port: ${ApplicationCenter.port}
 
     gateway:
+      filters:
+        - name: RequestSize
+          args:
+            maxSize: 104857600
       discovery:
         locator:
           enabled: true
@@ -49,8 +53,6 @@ spring:
   sleuth:
     sampler:
       probability: ${Zipkin.sampler.probability}
-
-
 
 
 

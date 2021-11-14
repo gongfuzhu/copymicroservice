@@ -1,6 +1,5 @@
 package demo.simple.dao.impl;
 
-import com.github.microservice.components.data.base.data.DataHelper;
 import demo.simple.dao.UserDao;
 import demo.simple.dao.extend.UserDaoExtend;
 import demo.simple.domain.User;
@@ -21,10 +20,6 @@ public class UserDaoImpl implements UserDaoExtend {
 
     @Autowired
     private MongoTemplate mongoTemplate;
-
-
-    @Autowired
-    private DataHelper dataHelper;
 
 
     @Autowired

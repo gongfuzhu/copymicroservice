@@ -2,7 +2,7 @@ version: "3"
 
 services:
   build:
-    image: registry.cn-chengdu.aliyuncs.com/1s/maven
+    image: lianshufeng/maven
     ports:
       - "8080:8080"
     volumes:

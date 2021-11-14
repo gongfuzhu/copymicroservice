@@ -35,17 +35,15 @@
 
 
         <!-- demo -->
-<!--        <module>demo</module>-->
-<!---->
-<!--        <module>application/EnterpriseCenter</module>-->
-<!--        <module>application/UserCenter</module>-->
-<!--        <module>application/MessageCenter</module>-->
-<!--        <module>application/PushCenter</module>-->
-<!--        <module>application/FlowEngine</module>-->
-<!--        <module>application/signature</module>-->
-<!--        <module>application/baidupandl</module>-->
+        <!--                        <module>demo</module>-->
 
-<!--        <module>angel/buildHelper</module>-->
+        <module>application/EnterpriseCenter</module>
+        <module>application/UserCenter</module>
+        <module>application/MessageCenter</module>
+        <module>application/FileCenter</module>
+        <module>application/PushCenter</module>
+        <module>application/ProjectCenter</module>
+        <!--        <module>application/baidupandl</module>-->
 
     </modules>
 

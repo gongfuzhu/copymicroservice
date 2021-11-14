@@ -66,24 +66,45 @@ public class ReIndexHelper {
 
 
     /**
-     * 更新索引，独立的索引项
+     * 取出现有点索引
      *
-     * @param entityClass
-     * @param indexs
+     * @return
      */
-    @SneakyThrows
-    public void updateIndex(Class<? extends SuperEntity> entityClass, Index... indexs) {
+    public Set<String> getIndexNames(String tableName) {
         //现有索引
-        Set<String> nowIndexNames = this.mongoTemplate.indexOps(entityClass)
+        return this.mongoTemplate.indexOps(tableName)
                 .getIndexInfo()
                 .stream()
                 .map((it) -> {
                     return it.getName();
                 }).collect(Collectors.toSet());
+    }
+
+
+    /**
+     * 取出现有点索引
+     *
+     * @param entityClass
+     * @return
+     */
+    public Set<String> getIndexNames(Class<? extends SuperEntity> entityClass) {
+        return this.getIndexNames(this.mongoTemplate.getCollectionName(entityClass));
+    }
+
+
+    /**
+     * 更新索引
+     *
+     * @param tableName
+     * @param indexs
+     */
+    public void updateIndex(String tableName, Index... indexs) {
+        //现有索引
+        Set<String> nowIndexNames = getIndexNames(tableName);
 
 
         //索引
-        IndexOperations indexOperations = this.mongoTemplate.indexOps(entityClass);
+        IndexOperations indexOperations = this.mongoTemplate.indexOps(tableName);
 
         //索引不存在建索引
         Arrays.stream(indexs).filter((it) -> {
@@ -101,6 +122,17 @@ public class ReIndexHelper {
             log.info("create index : " + ret);
         });
 
+    }
+
+    /**
+     * 更新索引，独立的索引项
+     *
+     * @param entityClass
+     * @param indexs
+     */
+    @SneakyThrows
+    public void updateIndex(Class<? extends SuperEntity> entityClass, Index... indexs) {
+        this.updateIndex(this.mongoTemplate.getCollectionName(entityClass), indexs);
     }
 
 

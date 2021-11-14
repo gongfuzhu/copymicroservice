@@ -1,7 +1,9 @@
 package com.github.microservice.components.data.mongo.mongo.helper;
 
+import com.github.microservice.core.util.os.SystemUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
@@ -9,6 +11,8 @@ import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Component
 public class TransactionHelper {
@@ -16,6 +20,16 @@ public class TransactionHelper {
 
     @Autowired
     private TransactionTemplate transactionTemplate;
+
+    //线程池
+    ExecutorService threadPool = Executors.newFixedThreadPool(SystemUtil.getCpuCoreCount() * 2);
+
+    @Autowired
+    private void init(ApplicationContext applicationContext) {
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            threadPool.shutdownNow();
+        }));
+    }
 
 
     /**
@@ -49,14 +63,15 @@ public class TransactionHelper {
     @SneakyThrows
     public void noTransaction(Runnable runnable) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        new Thread(() -> {
+        threadPool.execute(() -> {
             try {
                 runnable.run();
             } catch (Exception e) {
                 e.printStackTrace();
+            } finally {
+                countDownLatch.countDown();
             }
-            countDownLatch.countDown();
-        }).start();
+        });
         countDownLatch.await();
     }
 
