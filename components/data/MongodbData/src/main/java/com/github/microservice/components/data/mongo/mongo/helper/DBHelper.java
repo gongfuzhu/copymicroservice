@@ -1,6 +1,8 @@
 package com.github.microservice.components.data.mongo.mongo.helper;
 
 import com.github.microservice.components.data.mongo.mongo.domain.SuperEntity;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Delegate;
 import org.bson.Document;
 import org.bson.codecs.DocumentCodec;
@@ -16,7 +18,10 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
@@ -47,6 +52,12 @@ public class DBHelper {
     @Autowired
     @Delegate(types = BatchQueryHelper.class)
     private BatchQueryHelper batchQueryHelper;
+
+
+    //偏移数据
+    @Setter
+    @Getter
+    private long offsetTime = 0L;
 
 
     // 缓存集合与类名
@@ -107,18 +118,7 @@ public class DBHelper {
      * @return
      */
     public long getTime() {
-//        Query query = new Query(Criteria.where("key").is("time"));
-//        Update update = new Update();
-//        update.setOnInsert("key", "time");
-//        update.currentDate("value");
-//        FindAndModifyOptions options = new FindAndModifyOptions();
-//        options.upsert(true);
-//        DBHelperEntity dbHelperEntity = this.mongoTemplate.findAndModify(query, update, options, DBHelperEntity.class);
-//        if (dbHelperEntity==null){
-//            return getTime();
-//        }
-//        return Long.valueOf(String.valueOf(((Date) dbHelperEntity.getValue()).getTime()));
-        return  System.currentTimeMillis();
+        return this.offsetTime + System.currentTimeMillis();
     }
 
 
@@ -262,5 +262,14 @@ public class DBHelper {
         return toJson(query.getQueryObject());
     }
 
+    /**
+     * 支持查询对象转Json
+     *
+     * @param update
+     * @return
+     */
+    public String toJson(Update update) {
+        return toJson(update.getUpdateObject());
+    }
 
 }

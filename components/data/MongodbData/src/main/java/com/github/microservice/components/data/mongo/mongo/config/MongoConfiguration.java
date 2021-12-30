@@ -30,6 +30,12 @@ import java.util.List;
 @EnableMongoRepositories("com.github.microservice.components.data.mongo.mongo.dao")
 public class MongoConfiguration {
 
+
+    static {
+        //jdk 11 以上，强制使用 TLSv1.3 ,  mongo 驱动目前兼容 TLSv1.2
+        System.setProperty("jdk.tls.client.protocols", "TLSv1.2");
+    }
+
     /**
      * 自定义转换器
      *

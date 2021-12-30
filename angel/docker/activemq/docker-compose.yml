@@ -1,49 +1,51 @@
-version: "3"
+version: "3.9"
 
 services:
-
-  mqBroker1:
-    image: lianshufeng/activemq
+  mq1:
+    image: lianshufeng/activemq:artemis
     ports:
-      - "1883:1883"
-      - "61614:61614"
       - "8161:8161"
       - "61616:61616"
-    volumes:
-      - ./activemq1.xml:/opt/activemq/conf/activemq.xml
-      - ./store/broker1/data:/opt/activemq/data
-    container_name: mqBroker1
-    restart: always
+      - "1883:1883"
     environment:
-      - Broker_Name=mqBroker1
+      - Broker_User=${Broker_User}
+      - Broker_Password=${Broker_Password}
+      - Broker_Role=${admins}
+    volumes:
+      - ./broker1:/opt/broker
+    container_name: mq1
+    restart: always
+    hostname: mq1
 
-
-  mqBroker2:
-    image: lianshufeng/activemq
+  mq2:
+    image: lianshufeng/activemq:artemis
     ports:
-      - "2883:1883"
-      - "61624:61614"
       - "8162:8161"
       - "61626:61616"
-    volumes:
-      - ./activemq2.xml:/opt/activemq/conf/activemq.xml
-      - ./store/broker2/data:/opt/activemq/data
-    container_name: mqBroker2
-    restart: always
+      - "1884:1883"
     environment:
-      - Broker_Name=mqBroker2
-      
-  mqBroker3:
-    image: lianshufeng/activemq
+      - Broker_User=${Broker_User}
+      - Broker_Password=${Broker_Password}
+      - Broker_Role=${admins}
+    volumes:
+      - ./broker2:/opt/broker
+    container_name: mq2
+    restart: always
+    hostname: mq2
+    
+  mq3:
+    image: lianshufeng/activemq:artemis
     ports:
-      - "3883:1883"
-      - "61634:61614"
       - "8163:8161"
       - "61636:61616"
-    volumes:
-      - ./activemq3.xml:/opt/activemq/conf/activemq.xml
-      - ./store/broker3/data:/opt/activemq/data
-    container_name: mqBroker3
-    restart: always
+      - "1885:1883"
     environment:
-      - Broker_Name=mqBroker3
+      - Broker_User=${Broker_User}
+      - Broker_Password=${Broker_Password}
+      - Broker_Role=${admins}
+    volumes:
+      - ./broker3:/opt/broker
+    container_name: mq3
+    restart: always
+    hostname: mq3
+    

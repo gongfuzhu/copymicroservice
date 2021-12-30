@@ -22,7 +22,7 @@
         <java.version>11</java.version>
 
         <!--spring cloud 版本-->
-        <spring-mvc.version>5.3.9</spring-mvc.version>
+        <spring-mvc.version>5.3.13</spring-mvc.version>
 
         <!-- auth2.0-->
         <spring-security-core.version>5.5.0</spring-security-core.version>
@@ -33,17 +33,18 @@
         <spring-security-oauth2-authorization-server.version>0.1.1</spring-security-oauth2-authorization-server.version>
 
 
-        <spring-cloud-dependencies.version>2020.0.3</spring-cloud-dependencies.version>
-        <spring-cloud.version>3.0.3</spring-cloud.version>
-        <spring-cloud-starter-stream.version>3.1.3</spring-cloud-starter-stream.version>
-        <spring-cloud-starter-config.version>3.0.4</spring-cloud-starter-config.version>
+        <spring-cloud-dependencies.version>2020.0.4</spring-cloud-dependencies.version>
+        <spring-cloud.version>3.0.4</spring-cloud.version>
+        <spring-cloud-starter-stream.version>3.1.5</spring-cloud-starter-stream.version>
+        <spring-cloud-bus.version>3.0.3</spring-cloud-bus.version>
+        <spring-cloud-starter-config.version>3.0.5</spring-cloud-starter-config.version>
 
-        <spring-boot.version>2.5.4</spring-boot.version>
-        <spring-boot-starter-data-jpa.version>2.5.4</spring-boot-starter-data-jpa.version>
+        <spring-boot.version>2.5.6</spring-boot.version>
+        <spring-boot-starter-data-jpa.version>2.5.6</spring-boot-starter-data-jpa.version>
 
-        <spring-data-jpa.version>2.5.4</spring-data-jpa.version>
+        <spring-data-jpa.version>2.5.6</spring-data-jpa.version>
 
-        <spring-integration-core.version>5.5.3</spring-integration-core.version>
+        <spring-integration-core.version>5.5.5</spring-integration-core.version>
 
         <!-- 依赖组件 -->
         <ribbon.version>2.7.18.RELEASE</ribbon.version>
@@ -172,11 +173,11 @@
             <properties>
                 <spring.profiles.active>prod</spring.profiles.active>
 
-                <ApplicationCenter.url>http://192.168.63.130:${ApplicationCenter.port}</ApplicationCenter.url>
-                <ConfigCenter.url>http://172.16.191.109:${ConfigCenter.port}</ConfigCenter.url>
-                <Kafka.brokers>172.16.119.142:9092</Kafka.brokers>
-                <Zipkin.baseUrl>http://172.16.134.183:9411</Zipkin.baseUrl>
-                <Zipkin.sampler.probability>0.1</Zipkin.sampler.probability>
+                <ApplicationCenter.url>172.28.95.160:8500,172.28.95.160:8501,172.28.95.160:8502</ApplicationCenter.url>
+                <ConfigCenter.url>http://172.28.95.160:${ConfigCenter.port}</ConfigCenter.url>
+                <Kafka.brokers>172.27.127.14:9092,172.27.127.14:9093,172.27.127.14:9094</Kafka.brokers>
+                <Zipkin.baseUrl>http://172.27.127.14:9411</Zipkin.baseUrl>
+                <Zipkin.sampler.probability>0.01</Zipkin.sampler.probability>
             </properties>
         </profile>
     </profiles>

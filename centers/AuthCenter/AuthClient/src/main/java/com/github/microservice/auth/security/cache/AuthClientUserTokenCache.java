@@ -153,11 +153,11 @@ public class AuthClientUserTokenCache {
      */
 //    @Cacheable(value = CacheName, key = "#uToken")
     public EnterpriseUserCacheItem readCache(String uToken) {
-        log.info("Miss Cache : " + uToken);
         Object item = this.cache.getIfPresent(uToken);
         if (item instanceof EnterpriseUserCacheItem) {
             return (EnterpriseUserCacheItem) item;
         }
+        log.info("Miss Cache : {}", uToken);
         return null;
     }
 

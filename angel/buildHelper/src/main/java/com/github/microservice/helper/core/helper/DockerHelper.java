@@ -24,7 +24,7 @@ public class DockerHelper {
      * 重启容器
      */
     @SneakyThrows
-    public void restart(String[] containerNames) {
+    public synchronized void restart(String[] containerNames) {
         String fileName = "restart_" + TokenUtil.create();
         @Cleanup("delete") File cmdFile = new File(System.getProperty("java.io.tmpdir") + "/" + fileName + ".sh");
         StringBuffer sb = new StringBuffer();
