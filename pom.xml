@@ -36,7 +36,7 @@
 
 
 
-        <module>application/Task</module>
+        <module>application/common</module>
 
     </modules>
 
