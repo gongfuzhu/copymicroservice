@@ -37,7 +37,7 @@
 
         <module>application/UITest_common</module>
         <module>application/UITest_demo</module>
-        <module>demo</module>
+        <module>application/xiaoyudian</module>
 
     </modules>
 
