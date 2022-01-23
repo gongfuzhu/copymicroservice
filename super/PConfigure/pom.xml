@@ -19,7 +19,7 @@
 
         <appium.version>7.6.0</appium.version>
         <selenium.version>4.1.1</selenium.version>
-        <bonigarcia.version>5.0.0</bonigarcia.version>
+        <bonigarcia.version>5.0.3</bonigarcia.version>
 
 
 
