@@ -95,6 +95,41 @@ public class MongoQueryLanguageHelper {
         return new PageImpl<Document>(resultSet, pageable, total);
     }
 
+    @SneakyThrows
+    public List<Document> queryByMql(QueryModel queryModel,Sort sort, String tableName) {
+        MongoCollection<Document> mongoCollection = this.mongoTemplate.getCollection(tableName);
+
+        final String mql = !StringUtils.hasText(queryModel.getMql()) ? "{}" : queryModel.getMql();
+        final Set<String> fields = queryModel.getFields() == null ? new HashSet<>() : queryModel.getFields();
+
+        //排序
+        Bson bsonSort = sort(sort);
+
+        //mql查询对象
+        Document mqlBson = Document.parse(mql);
+
+        //构建查询语句
+        FindIterable<Document> findIterable = mongoCollection.find(mqlBson);
+
+        //过滤需要显示的字段
+        if (fields.size() > 0) {
+            findIterable = findIterable.projection(projection(fields));
+        }
+
+        //分页条件
+        findIterable = findIterable.sort(bsonSort);
+
+        //结果集
+        List<Document> resultSet = new ArrayList<>();
+
+        //查询
+        for (Document document : findIterable) {
+            resultSet.add(document);
+        }
+
+        return resultSet;
+    }
+
     /**
      * 转换为sort
      *

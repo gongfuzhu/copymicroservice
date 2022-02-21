@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   kafka1:
-    image: "lianshufeng/kafka"
+    image: lianshufeng/kafka
     container_name: kafka1
     hostname: kafka1
     restart: always
@@ -12,13 +12,14 @@ services:
     volumes:
       - ${store}/data1/logs:/opt/kafka/logs
       - ${store}/data1/kafka_logs:/tmp/kafka-logs
+      - ${store}/data1/zookeeper:/tmp/zookeeper
     ports:
       - 2181:2181
       - 9092:9092
 
 
   kafka2:
-    image: "lianshufeng/kafka"
+    image: lianshufeng/kafka
     container_name: kafka2
     hostname: kafka2
     restart: always
@@ -28,13 +29,14 @@ services:
     volumes:
       - ${store}/data2/logs:/opt/kafka/logs
       - ${store}/data2/kafka_logs:/tmp/kafka-logs
+      - ${store}/data2/zookeeper:/tmp/zookeeper
     ports:
       - 2182:2181
       - 9093:9092
 
 
   kafka3:
-    image: "lianshufeng/kafka"
+    image: lianshufeng/kafka
     container_name: kafka3
     hostname: kafka3
     restart: always
@@ -44,12 +46,13 @@ services:
     volumes:
       - ${store}/data3/logs:/opt/kafka/logs
       - ${store}/data3/kafka_logs:/tmp/kafka-logs
+      - ${store}/data3/zookeeper:/tmp/zookeeper
     ports:
       - 2183:2181
       - 9094:9092
 
 
-  
+
 
 
 

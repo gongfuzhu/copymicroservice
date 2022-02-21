@@ -11,7 +11,7 @@ import java.net.http.HttpResponse
 
 @Log
 @Component
-class ConsulHelper extends HostHelper {
+class ConsulDiscoverHelper extends HostHelper {
 
     String url(String uri) {
         return getUrl() + "/" + uri

@@ -45,9 +45,12 @@ public abstract class MessageContentConsumer<T> implements MessageHandler {
     @Override
     @SneakyThrows
     public final void handleMessage(Message<?> message) throws MessagingException {
-        final String msg = new String((byte[]) message.getPayload(), "UTF-8");
         final Type type = getType();
-        this.handleMessage(message.getHeaders(), (T) this.jsonHelper.toObject(msg, (Class) type));
+        final String msg = new String((byte[]) message.getPayload(), "UTF-8");
+        final Class typeClass = (Class) type;
+        this.handleMessage(message.getHeaders(),
+                String.class == typeClass ? (T) msg : (T) this.jsonHelper.toObject(msg, typeClass)
+        );
     }
 
 
