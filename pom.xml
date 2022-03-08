@@ -39,6 +39,7 @@
         <module>application/UITest_demo</module>
         <module>application/xiaoyudian</module>
 
+        <module>application/hematask</module>
     </modules>
 
 
