@@ -2,22 +2,27 @@ package com.github.microservice.discovery.core.timer;
 
 
 import com.github.microservice.discovery.core.conf.ConsulConf;
-import com.github.microservice.discovery.core.helper.ConsulHelper;
+import com.github.microservice.discovery.core.helper.ConsulDiscoverHelper;
 import com.github.microservice.discovery.core.model.ServiceHealth;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Component
 public class CheckTimer {
 
     @Autowired
-    private ConsulHelper consulHelper;
+    private ConsulDiscoverHelper consulHelper;
 
     @Autowired
     private ConsulConf consulConf;

@@ -20,7 +20,7 @@ public class TokenLoginModel {
 
     //用户id
     @NotNull
-    @ApiModelProperty(name = "maxCheckCount", required = true, example = ExampleConstant.UserId)
+    @ApiModelProperty(name = "uid", required = true, example = ExampleConstant.UserId)
     private String uid;
 
     //临时密钥

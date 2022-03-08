@@ -120,13 +120,15 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>${spring-cloud.version}</version>
             <exclusions>
-
-                <exclusion>
+                 <exclusion>
                     <artifactId>spring-boot-autoconfigure</artifactId>
                     <groupId>org.springframework.boot</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
+
+
+
         <!--ribbon-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

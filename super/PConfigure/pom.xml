@@ -31,36 +31,39 @@
         <java.version>11</java.version>
 
         <!--spring cloud 版本-->
-        <spring-mvc.version>5.3.13</spring-mvc.version>
+        <spring-mvc.version>5.3.15</spring-mvc.version>
 
         <!-- auth2.0-->
-        <spring-security-core.version>5.5.0</spring-security-core.version>
+        <spring-security-core.version>5.6.1</spring-security-core.version>
         <spring-security-oauth2.version>2.5.1.RELEASE</spring-security-oauth2.version>
         <!--        <spring-security-oauth2.version>2.3.8.RELEASE</spring-security-oauth2.version>-->
 
-        <spring-boot-starter-security.version>2.5.0</spring-boot-starter-security.version>
+        <spring-boot-starter-security.version>2.6.3</spring-boot-starter-security.version>
         <spring-security-oauth2-authorization-server.version>0.1.1</spring-security-oauth2-authorization-server.version>
 
 
-        <spring-cloud-dependencies.version>2020.0.4</spring-cloud-dependencies.version>
-        <spring-cloud.version>3.0.4</spring-cloud.version>
-        <spring-cloud-starter-stream.version>3.1.5</spring-cloud-starter-stream.version>
-        <spring-cloud-bus.version>3.0.3</spring-cloud-bus.version>
-        <spring-cloud-starter-config.version>3.0.5</spring-cloud-starter-config.version>
+        <spring-cloud-dependencies.version>2021.0.0</spring-cloud-dependencies.version>
+        <spring-cloud.version>3.1.0</spring-cloud.version>
+        <spring-cloud-starter-stream.version>3.2.1</spring-cloud-starter-stream.version>
+        <spring-cloud-bus.version>3.1.0</spring-cloud-bus.version>
+        <spring-cloud-starter-config.version>3.1.0</spring-cloud-starter-config.version>
 
-        <spring-boot.version>2.5.6</spring-boot.version>
-        <spring-boot-starter-data-jpa.version>2.5.6</spring-boot-starter-data-jpa.version>
+        <spring-boot.version>2.6.3</spring-boot.version>
+        <spring-boot-starter-data-jpa.version>2.6.3</spring-boot-starter-data-jpa.version>
 
-        <spring-data-jpa.version>2.5.6</spring-data-jpa.version>
+        <spring-data-jpa.version>2.6.1</spring-data-jpa.version>
 
-        <spring-integration-core.version>5.5.5</spring-integration-core.version>
+        <spring-integration-core.version>5.5.8</spring-integration-core.version>
 
         <!-- 依赖组件 -->
-        <ribbon.version>2.7.18.RELEASE</ribbon.version>
-        <netflix.version>3.0.3</netflix.version>
-        <netflix-zuul.version>2.2.9.RELEASE</netflix-zuul.version>
-        <netflix-hystrix.version>2.2.9.RELEASE</netflix-hystrix.version>
-        <netflix-ribbon.version>2.2.9.RELEASE</netflix-ribbon.version>
+<!--        <ribbon.version>2.7.18.RELEASE</ribbon.version>-->
+<!--        <netflix.version>3.0.3</netflix.version>-->
+        <netflix-zuul.version>2.2.10.RELEASE</netflix-zuul.version>
+        <netflix-hystrix.version>2.2.10.RELEASE</netflix-hystrix.version>
+        <netflix-ribbon.version>2.2.10.RELEASE</netflix-ribbon.version>
+
+
+        <feign.version>11.8</feign.version>
 
 
         <!-- 其他工具版本 -->
@@ -184,7 +187,7 @@
 
                 <ApplicationCenter.url>172.28.95.160:8500,172.28.95.160:8501,172.28.95.160:8502</ApplicationCenter.url>
                 <ConfigCenter.url>http://172.28.95.160:${ConfigCenter.port}</ConfigCenter.url>
-                <Kafka.brokers>172.27.127.14:9092,172.27.127.14:9093,172.27.127.14:9094</Kafka.brokers>
+                <Kafka.brokers>172.27.127.15:9092</Kafka.brokers>
                 <Zipkin.baseUrl>http://172.27.127.14:9411</Zipkin.baseUrl>
                 <Zipkin.sampler.probability>0.01</Zipkin.sampler.probability>
             </properties>

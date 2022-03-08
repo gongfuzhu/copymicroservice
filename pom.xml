@@ -30,7 +30,6 @@
         <!-- 组件 -->
         <module>components</module>
 
-
         <!-- 中心 -->
         <module>centers</module>
 
