@@ -33,12 +33,11 @@
         <!-- 中心 -->
         <module>centers</module>
 
-
-        <module>application/UITest_common</module>
-        <module>application/UITest_demo</module>
-        <module>application/xiaoyudian</module>
-
+        <module>application/automation</module>
         <module>application/hematask</module>
+        <module>application/UITest_common</module>
+
+
     </modules>
 
 
