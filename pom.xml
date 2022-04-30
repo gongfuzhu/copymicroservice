@@ -34,8 +34,6 @@
         <module>centers</module>
 
         <module>application/automation</module>
-        <module>application/hematask</module>
-        <module>application/UITest_common</module>
 
 
     </modules>
