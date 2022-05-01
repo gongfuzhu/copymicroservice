@@ -67,7 +67,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-            <version>${spring-cloud.version}</version>
+            <version>${spring-cloud-starter-consul-discovery.version}</version>
         </dependency>
 
         <dependency>
