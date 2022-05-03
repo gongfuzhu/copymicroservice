@@ -57,7 +57,7 @@ public class DataCleanManagerMongo implements DataCleanManager {
 
 
     @Autowired
-    private void init() {
+    private void init(ApplicationContext applicationContext) {
         this._taskGroup.clear();
         this.applicationContext.getBeansOfType(MongoDataCleanTask.class).values().forEach((it) -> {
             String taskName = it.taskName();

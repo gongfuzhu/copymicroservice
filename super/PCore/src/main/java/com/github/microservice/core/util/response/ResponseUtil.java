@@ -3,7 +3,7 @@ package com.github.microservice.core.util.response;
 import com.github.microservice.core.util.response.model.MimeType;
 import lombok.Cleanup;
 import lombok.SneakyThrows;
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRange;
 import org.springframework.http.server.ServletServerHttpRequest;
@@ -21,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 响应工具类
  */
-@Log
+@Slf4j
 public class ResponseUtil {
 
 
@@ -40,13 +40,22 @@ public class ResponseUtil {
 
 
     /**
+     * 查询文件的MimeType
+     *
+     * @param extName
+     * @return
+     */
+    public static String getMimeType(String extName) {
+        return extNameMimeMap.get(extName).getName();
+    }
+
+    /**
      * 写出流
      *
      * @param response
      */
     @SneakyThrows
-    public static boolean writeStream(HttpServletRequest request, HttpServletResponse response, InputStream
-            sourceStream, long sourceSize, String extName) {
+    public static boolean writeStream(HttpServletRequest request, HttpServletResponse response, InputStream sourceStream, long sourceSize, String extName) {
 
         MimeType mimetype = extNameMimeMap.get(extName);
 
@@ -133,8 +142,7 @@ public class ResponseUtil {
      * @param sourceSize
      */
     @SneakyThrows
-    private static void rangeHelper2(HttpServletRequest request, HttpServletResponse response, InputStream
-            sourceStream, long sourceSize) {
+    private static void rangeHelper2(HttpServletRequest request, HttpServletResponse response, InputStream sourceStream, long sourceSize) {
 
         //支持断点续传
         response.addHeader("Accept-Ranges", "bytes");
